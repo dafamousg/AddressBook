@@ -1,0 +1,209 @@
+{
+  "results": [
+    {
+      "gender": "female",
+      "name": {
+        "title": "Mademoiselle",
+        "first": "Andreia",
+        "last": "Fournier"
+      },
+      "location": {
+        "street": {
+          "number": 2943,
+          "name": "Avenue Tony-Garnier"
+        },
+        "city": "Wohlen bei Bern",
+        "state": "Neuchâtel",
+        "country": "Switzerland",
+        "postcode": 4468,
+        "coordinates": {
+          "latitude": "-52.0509",
+          "longitude": "119.7032"
+        },
+        "timezone": {
+          "offset": "-6:00",
+          "description": "Central Time (US & Canada), Mexico City"
+        }
+      },
+      "email": "andreia.fournier@example.com",
+      "dob": {
+        "date": "1988-08-25T13:52:42.455Z",
+        "age": 34
+      },
+      "phone": "079 066 82 30",
+      "cell": "075 262 57 18",
+      "id": {
+        "name": "AVS",
+        "value": "756.3588.8199.76"
+      },
+      "picture": {
+        "large": "https://randomuser.me/api/portraits/women/85.jpg",
+        "medium": "https://randomuser.me/api/portraits/med/women/85.jpg",
+        "thumbnail": "https://randomuser.me/api/portraits/thumb/women/85.jpg"
+      },
+      "nat": "CH"
+    },
+    {
+      "gender": "female",
+      "name": {
+        "title": "Miss",
+        "first": "Carmen",
+        "last": "Ruiz"
+      },
+      "location": {
+        "street": {
+          "number": 4904,
+          "name": "Calle del Pez"
+        },
+        "city": "Madrid",
+        "state": "Comunidad de Madrid",
+        "country": "Spain",
+        "postcode": 51306,
+        "coordinates": {
+          "latitude": "-50.6722",
+          "longitude": "-44.8520"
+        },
+        "timezone": {
+          "offset": "-8:00",
+          "description": "Pacific Time (US & Canada)"
+        }
+      },
+      "email": "carmen.ruiz@example.com",
+      "phone": "911-060-458",
+      "cell": "636-201-395",
+      "id": {
+        "name": "DNI",
+        "value": "17921093-N"
+      },
+      "picture": {
+        "large": "https://randomuser.me/api/portraits/women/91.jpg",
+        "medium": "https://randomuser.me/api/portraits/med/women/91.jpg",
+        "thumbnail": "https://randomuser.me/api/portraits/thumb/women/91.jpg"
+      },
+      "nat": "ES"
+    },
+    {
+      "gender": "male",
+      "name": {
+        "title": "Mr",
+        "first": "محمدعلی",
+        "last": "یاسمی"
+      },
+      "location": {
+        "street": {
+          "number": 2527,
+          "name": "میدان 15خرداد"
+        },
+        "city": "گرگان",
+        "state": "چهارمحال و بختیاری",
+        "country": "Iran",
+        "postcode": 74386,
+        "coordinates": {
+          "latitude": "83.5337",
+          "longitude": "-96.0885"
+        },
+        "timezone": {
+          "offset": "-1:00",
+          "description": "Azores, Cape Verde Islands"
+        }
+      },
+      "email": "mhmdaaly.ysmy@example.com",
+      "phone": "060-00732522",
+      "cell": "0996-564-0835",
+      "id": {
+        "name": "",
+        "value": null
+      },
+      "picture": {
+        "large": "https://randomuser.me/api/portraits/men/16.jpg",
+        "medium": "https://randomuser.me/api/portraits/med/men/16.jpg",
+        "thumbnail": "https://randomuser.me/api/portraits/thumb/men/16.jpg"
+      },
+      "nat": "IR"
+    },
+    {
+      "gender": "male",
+      "name": {
+        "title": "Mr",
+        "first": "Logan",
+        "last": "Williams"
+      },
+      "location": {
+        "street": {
+          "number": 8762,
+          "name": "Duke St"
+        },
+        "city": "Trenton",
+        "state": "British Columbia",
+        "country": "Canada",
+        "postcode": "X1X 0X5",
+        "coordinates": {
+          "latitude": "-37.9012",
+          "longitude": "-136.7721"
+        },
+        "timezone": {
+          "offset": "-12:00",
+          "description": "Eniwetok, Kwajalein"
+        }
+      },
+      "email": "logan.williams@example.com",
+      "phone": "385-102-4615",
+      "cell": "806-908-3703",
+      "id": {
+        "name": "",
+        "value": null
+      },
+      "picture": {
+        "large": "https://randomuser.me/api/portraits/men/38.jpg",
+        "medium": "https://randomuser.me/api/portraits/med/men/38.jpg",
+        "thumbnail": "https://randomuser.me/api/portraits/thumb/men/38.jpg"
+      },
+      "nat": "CA"
+    },
+    {
+      "gender": "female",
+      "name": {
+        "title": "Miss",
+        "first": "Clara",
+        "last": "Gutierrez"
+      },
+      "location": {
+        "street": {
+          "number": 3404,
+          "name": "Avenida de Salamanca"
+        },
+        "city": "Barcelona",
+        "state": "País Vasco",
+        "country": "Spain",
+        "postcode": 42327,
+        "coordinates": {
+          "latitude": "-79.0900",
+          "longitude": "-179.4832"
+        },
+        "timezone": {
+          "offset": "+4:30",
+          "description": "Kabul"
+        }
+      },
+      "email": "clara.gutierrez@example.com",
+      "phone": "910-230-699",
+      "cell": "666-200-387",
+      "id": {
+        "name": "DNI",
+        "value": "85019572-L"
+      },
+      "picture": {
+        "large": "https://randomuser.me/api/portraits/women/41.jpg",
+        "medium": "https://randomuser.me/api/portraits/med/women/41.jpg",
+        "thumbnail": "https://randomuser.me/api/portraits/thumb/women/41.jpg"
+      },
+      "nat": "ES"
+    }
+  ],
+  "info": {
+    "seed": "7d642dc2a99ba1b6",
+    "results": 5,
+    "page": 1,
+    "version": "1.3"
+  }
+}
