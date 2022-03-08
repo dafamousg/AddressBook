@@ -13,9 +13,9 @@ function EmployeeProfile(props) {
 
 
 	useEffect(() => {
-		const selectedEmployee = employeeArray.find(e => e.id.value === employeeId);
+		const selectedEmployee = employeeArray.find(e => e.id === employeeId);
 		setEmployee(selectedEmployee);
-	}, [props.employeeArray]);
+	}, [employeeArray, employeeId]);
 
 	
 	console.log("EmployeeProfile: ", employee);
