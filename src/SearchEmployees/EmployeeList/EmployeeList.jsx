@@ -9,6 +9,7 @@ function EmployeeList(props) {
 		return (
 			<Employee
 				key={i}
+				className="employee"
 				onClick={() => props.selectEmployee(employee.id.value)}
 				employee={employee}
 			/>
@@ -16,9 +17,11 @@ function EmployeeList(props) {
 	});
 
 	return (
-		<div className="EmployeeList">
+		<div >
 			<div>EmployeeList</div>
-			{employeesList}
+			<div className="EmployeeList">
+				{employeesList}
+			</div>
 		</div>
 	);
 }
