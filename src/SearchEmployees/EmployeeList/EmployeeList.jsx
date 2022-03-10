@@ -1,21 +1,25 @@
 import Employee from './Employee/Employee';
 import './EmployeeList.css';
 
-function EmployeeList(props) {
-	const employeeArray = props.employeeArray;
-	//console.log("EmployeeList");
+function EmployeeList({employeeArray, selectEmployee}) {
+	
+	console.log("EmployeeList re-render");
 
-	let employeesList = employeeArray.map((employee, i) => {
-		return (
-			<Employee
-				key={i}
-				className="employee"
-				onClick={() => props.selectEmployee(employee.id.value)}
-				employee={employee}
-			/>
-		);
-	});
+	let employeesList;
 
+	if (employeeArray.length > 0) {
+		employeesList = employeeArray.map((employee, i) => {
+			return (
+				<Employee
+					key={i}
+					className="employee"
+					onClick={() => selectEmployee(employee.id.value)}
+					employee={employee}
+				/>
+			);
+		});
+	}
+	
 	return (
 		<div >
 			<div>EmployeeList</div>

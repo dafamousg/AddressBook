@@ -1,0 +1,20 @@
+.SearchEmployees {
+	width: 75%;
+	margin: auto;
+	
+	.searchContainer {
+		margin: 100px auto;
+		
+		.sortingOptions {
+			background-color: pink;
+			display: flex;
+			width: 100%;
+			justify-content: space-evenly;
+
+			span:hover {
+				cursor: pointer;
+			}
+		}
+	}
+}
+

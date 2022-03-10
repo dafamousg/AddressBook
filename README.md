@@ -18,8 +18,8 @@ Use search field to filter list of employees based on all properties in object (
 * Input field will try to check all properties in employee object and filter based on first match of property value.
 
 
-<!-- ### ***Sorting list***:
-Press titles to sort list based on title pressed. -->
+### ***Sorting list***:
+Press any of the sorting options underneath the search bar to sort based on object property.
 
 
 ---

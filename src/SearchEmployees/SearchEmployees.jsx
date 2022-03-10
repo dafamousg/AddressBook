@@ -1,103 +1,60 @@
-import './SearchEmployees.css';
+import React from 'react';
+import './SearchEmployees.scss';
 import SearchBar from './SearchBar/SearchBar';
 import EmployeeList from './EmployeeList/EmployeeList';
 import { useState } from 'react';
-import { useEffect } from 'react';
 
-function SearchEmployees(props) {
-	const unsortedArray = props.employeeArray;
-	const [employeeArray, setEmployeeArray] = useState(props.employeeArray);
+function SearchEmployees({employeeArray}) {
 
-	useEffect(() => {
-		setEmployeeArray(unsortedArray);
-	}, [unsortedArray]);
+	const sortedArray = employeeArray;
+
+	const [displayArray, setDisplayArray] = useState(sortedArray);
+	
+	console.log("SearchEmployees re-render: ", employeeArray);
+
 
 	/**
-	 * Function to filter array of employees by text input
+	 * Function to sort an employeeArray of objects by object properties value
 	 * 
-	 * @param {Array} unsortedEmployeeArray Unsorted list of object employees
-	 * @param {String} filterString String from text input field
-	 * 
-	 * Local state (employeeArray) gets set to the filtered array (filteredArray).
+	 * @param {Array} unsortedEmployeeArray 
+	 * @param {String} sortingType 
 	 */
-	function filtering(unsortedEmployeeArray, filterString) {
-		//console.log("filterString: ", filterString);
-	
-		//const filterWords = filterString.split(/(,| |!|\?)+/);
-		const filterWords = filterString.split(" ");
-	
-		// Filter through properties value of array.
-		const filteredArray = unsortedEmployeeArray.filter((employee => loopEntries(employee, filterWords)));
-	
-		
-		/* console.log("filterWords: ", filterWords);
-		console.log("filteredArray: ", filteredArray); */
-		
-		// Set state to filtered employee array
-		setEmployeeArray(filteredArray);
+	function sortEmployees(unsortedEmployeeArray, sortingType) {
+		// Display chosen sort value
+		//console.log("setSortTo: ", sortingType);
+		const sortedArray = unsortedEmployeeArray.sort((a,b) =>
+			sortingType === "country" ?
+					(a.location[sortingType] > b.location[sortingType])
+				:
+					(a.name[sortingType] > b.name[sortingType])
+				);
+
+		//console.log("sortedEmployeeArray: ", sortedArray);
+		setDisplayArray(sortedArray);
+
+		return sortedArray;
 	}
 
+	let employeeList = displayArray.length > 0 && <EmployeeList employeeArray={displayArray}/>;
+
 	return (
-		<div className="SearchEmployees">
-			<SearchBar
-				employeeArray={employeeArray}
-				filtering={(filterString) => filtering(unsortedArray, filterString)}
-			/>
-			<EmployeeList employeeArray={employeeArray}/>
+		<div className="SearchEmployees"> 
+			<div className="searchContainer">
+				<SearchBar
+					employeeArray={sortedArray}
+					setDisplayArray={setDisplayArray}
+				/>
+				<div className="sortingOptions">
+					<p>SortBy:</p>
+					<span onClick={() => sortEmployees([...displayArray], "first")}>Firstname</span>
+					<span onClick={() => sortEmployees([...displayArray], "last")}>Lastname</span>
+					<span onClick={() => sortEmployees([...displayArray], "country")}>Country</span>
+				</div>
+			</div>
+			{employeeList}
 		</div>
 	);
 }
 
-/**
- * Function to loop entries and compare all values from properties in object
- * 
- * @param {object} entryObject  object of employee or callback from object property in object
- * @param {Array} filterWords array of words to use when filtering (only passed to function)
- * @returns Boolean from function compareValueWithWord
- */
-function loopEntries(entryObject, filterWords) {
-	if (entryObject != null) {
-		for (const [key, value] of Object.entries(entryObject)) {
-			if (typeof value === "object") 
-			{
-				/* console.log(`loopEntries key: ${key}`); */
-				if (loopEntries(value, filterWords))
-				{
-					return true;
-				}
-			}
-
-			/* console.log(`Key: ${key} = Value: ${value}; TypeOf: ${typeof value}`); */
-			if (value != null && compareValueWithWord(value, filterWords))
-			{
-				return true;
-			}
-		}
-	}
-
-	return false;
-}
-
-
-/**
- * 
- * @param {String} EmployeeValue property value from object "employee" 
- * @param {Array} filterWords array of words to use when filtering 
- * @returns 
- */
-function compareValueWithWord(EmployeeValue, filterWords) {
-	for (const filterWord of filterWords) {
-		if (EmployeeValue.toString().toLowerCase().includes(filterWord.toLowerCase()))
-		{
-			/* console.log("******FOUND A MATCH*******");
-			console.log("EmployeeValue: ", EmployeeValue);
-			console.log("filterWord: ", filterWord); */
-
-			return true;
-		}
-	}
-
-	return false;
-}
 
 export default SearchEmployees;
