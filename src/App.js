@@ -10,8 +10,7 @@ class App extends Component {
 		super(props);
 		
 		this.state = {
-			employeeArray: [],
-			selectedEmployee: null
+			employeeArray: []
 		};
 	}
 
@@ -22,23 +21,30 @@ class App extends Component {
 
 	getData = async (value) => {
 		console.log("API Call");
-		const res = await apiData(value);
-		console.log("API ANSWER: ", res);
-		this.setState({employeeArray: res});
+		await apiData(value)
+		.then((result) => {
+			console.log("API Answer: ", result);
+			this.setState({employeeArray: result})
+		});
 	};
 	
 	render() {
+		const arrayExists = this.state.employeeArray.length > 0;
+
+		let searchComponent = arrayExists && <SearchEmployees employeeArray={this.state.employeeArray}/>;
+		let employeeProfile = arrayExists && <EmployeeProfile employeeArray={this.state.employeeArray}/>;
+
 		return (
 			<BrowserRouter>
 				<div className="App">
 					<Routes>
 						<Route
 							exact path="/"
-							element={<SearchEmployees employeeArray={this.state.employeeArray}/>}
+							element={searchComponent}
 						/>
 						<Route
 							exact path="/Employee/:employeeId"
-							element={<EmployeeProfile employeeArray={this.state.employeeArray}/>}
+							element={employeeProfile}
 							/>
 					</Routes>
 				</div>
