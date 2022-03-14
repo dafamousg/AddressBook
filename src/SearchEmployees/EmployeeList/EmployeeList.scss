@@ -1,0 +1,36 @@
+table {
+	width: 100%;
+	border-collapse:separate; 
+	border-spacing: 0 0.5em;
+	text-align: left;
+/* 
+  td, th {
+	border: 1px solid #dddddd;
+  } */
+	tbody tr {
+		background-color: #acacac2b;
+	}
+
+	thead tr {
+		position: sticky;
+		top: 0;
+		background-color: white;
+	}
+}
+
+tbody tr td:nth-child(-n + 2)
+{
+	cursor: pointer;
+}
+
+tbody tr:hover
+{
+	background-color: #acacac75;
+}
+
+/* .EmployeeList {
+  display: flex;
+  justify-content: space-evenly;
+  align-content: flex-start;
+  flex-wrap: wrap;
+} */

@@ -1,7 +1,7 @@
 import Employee from './Employee/Employee';
-import './EmployeeList.css';
+import './EmployeeList.scss';
 
-function EmployeeList({employeeArray, selectEmployee}) {
+function EmployeeList({employeeArray}) {
 	
 	console.log("EmployeeList re-render");
 
@@ -12,8 +12,6 @@ function EmployeeList({employeeArray, selectEmployee}) {
 			return (
 				<Employee
 					key={i}
-					className="employee"
-					onClick={() => selectEmployee(employee.id.value)}
 					employee={employee}
 				/>
 			);
@@ -22,9 +20,21 @@ function EmployeeList({employeeArray, selectEmployee}) {
 	
 	return (
 		<div >
-			<div>EmployeeList</div>
 			<div className="EmployeeList">
-				{employeesList}
+				<table>
+					<thead>
+						<tr>
+							<th>{/** picture */}</th>
+							<th>Name</th>
+							<th>Email</th>
+							<th>Number</th>
+							<th>Country</th>
+						</tr>
+					</thead>
+					<tbody>
+						{employeesList}
+					</tbody>
+				</table>
 			</div>
 		</div>
 	);
