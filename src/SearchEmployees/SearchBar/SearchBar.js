@@ -2,11 +2,24 @@ import React from 'react';
 
 import './SearchBar.css';
 
+
 function SearchBar({employeeArray, setDisplayArray}) {
 
 	console.log("SearchBar re-render: ", employeeArray);
 	/* useEffect(() => {
 	}, [employeeArray]); */
+
+	let searchtimer;
+
+	const handleInput = (employeeArray, filterString) => {
+		
+		const inputDelay = 1000;
+		clearTimeout(searchtimer);
+
+		searchtimer = setTimeout(() => {
+			filterEmployees(employeeArray, filterString);
+		}, inputDelay);
+	}
 
 	/**
 	 * Function to filter array of employees by text input
@@ -16,7 +29,8 @@ function SearchBar({employeeArray, setDisplayArray}) {
 	 * 
 	 * Parent local state (displayArray) gets overwritten by filteredArray
 	 */
-	function filterEmployees(employeeArray, filterString) {	
+	function filterEmployees(employeeArray, filterString) {
+		console.log("filterEmployees");
 		//const filterWords = filterString.split(/(,| |!|\?)+/);
 		const filterWords = filterString.split(" ");
 		
@@ -31,7 +45,7 @@ function SearchBar({employeeArray, setDisplayArray}) {
 			<p>Search employee here</p>
 			<input 
 				type='text'
-				onChange={(e) => filterEmployees(employeeArray, e.target.value)}
+				onChange={(e) => handleInput(employeeArray, e.target.value)}
 				className='searchTerm'
 				placeholder='Search for employee'
 			/>
