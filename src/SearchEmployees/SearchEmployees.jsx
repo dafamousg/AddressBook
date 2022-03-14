@@ -4,6 +4,18 @@ import SearchBar from './SearchBar/SearchBar';
 import EmployeeList from './EmployeeList/EmployeeList';
 import { useState } from 'react';
 
+const sortingOrders = {
+	first: {
+		ascendingOrder: false
+	},
+	last: {
+		ascendingOrder: false
+	},
+	country: {
+		ascendingOrder: false
+	}
+}
+
 function SearchEmployees({employeeArray}) {
 
 	const sortedArray = employeeArray;
@@ -19,15 +31,40 @@ function SearchEmployees({employeeArray}) {
 	 * @param {Array} unsortedEmployeeArray 
 	 * @param {String} sortingType 
 	 */
-	function sortEmployees(unsortedEmployeeArray, sortingType) {
+	 function sortEmployees(unsortedEmployeeArray, sortingType) {
+		const ascending = sortingOrders[sortingType].ascendingOrder;
+
 		// Display chosen sort value
 		//console.log("setSortTo: ", sortingType);
-		const sortedArray = unsortedEmployeeArray.sort((a,b) =>
-			sortingType === "country" ?
-					(a.location[sortingType] > b.location[sortingType])
-				:
-					(a.name[sortingType] > b.name[sortingType])
-				);
+		const sortedArray = unsortedEmployeeArray.sort((a,b) => {
+			switch (sortingType) {
+				case 'country':
+					if (ascending)
+					{
+						console.log('ascending: ', ascending);
+						return a.location[sortingType] > b.location[sortingType];
+					}
+					else
+					{
+						console.log('ascending: ', ascending);
+						return a.location[sortingType] < b.location[sortingType];
+					}
+				case 'first':
+				case 'last':
+					if (ascending)
+					{
+						console.log('ascending: ', ascending);
+						return a.name[sortingType] > b.name[sortingType]
+					}
+					else
+					{
+						console.log('ascending: ', ascending);
+						return a.name[sortingType] < b.name[sortingType]
+					}
+			}
+		});
+
+		sortingOrders[sortingType].ascendingOrder = !sortingOrders[sortingType].ascendingOrder;
 
 		//console.log("sortedEmployeeArray: ", sortedArray);
 		setDisplayArray(sortedArray);
