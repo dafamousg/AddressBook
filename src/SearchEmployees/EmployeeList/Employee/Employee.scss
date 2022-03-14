@@ -1,53 +1,56 @@
-*{
-  box-sizing: border-box;
-  margin: 0;
+$maxPicHeight: 50px;
+$maxPicWidth: 50px;
+
+
+.img {
+	display: inline-block;
+	height: $maxPicHeight;
+	width: $maxPicWidth;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+
+
+/*
+
+a:link {
+	color: black;
+	text-decoration: none;
 }
 
 .employee {
-  display: flex;
-  position: relative;
-  border: 1px solid black;
-  border-radius: 20px;
-  margin: 10px auto;
-  height: 165px;
-  padding: 10px;
-  
-  justify-content: space-evenly;
-  align-content: space-around;
+	position: relative;
+	border: 1px solid black;
+	display: flex;
+	background-color: rgb(243, 243, 243);
+	flex-wrap: wrap;
+	//overflow: auto;
+	width: 200px;
+	height: 100px;
 }
 
 .imgContainer {
-  order: 1;
-  width: 20%;
-  display: inline-block;
-  margin: 0;
-  overflow: hidden;
-  min-width: 130px;
+	border: 1px solid pink;
+	border-radius: 50%;
+	left: 0;
+	top: 0;
+	overflow: auto;
+	position: absolute; 
+}
 
-  .img {
-    width: 130px;
-    height: 130px;
-    background-repeat: no-repeat;
-    background-size: cover;
-    border: 1px solid black;
-    position: absolute;
-    top: 50%;
-    -ms-transform: translateY(-50%);
-    transform: translateY(-50%);
-    overflow: hidden;
-  }
+.img {
+	height: $maxPicHeight;
+	width: $maxPicWidth;
+	background-size: cover;
+	background-repeat: no-repeat;
 }
 
 .infoContainer {
-  order: 2;
-  display: flex;
-  width: 80%;
-  justify-content: space-evenly;
-  align-content: space-around;
-  flex-wrap: wrap;
-  overflow: hidden;
-
-  .items {
-    min-width: 30%;
-  }
-}
+	height: 74px;
+	font-size: medium;
+	overflow: hidden;
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+} */
