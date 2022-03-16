@@ -13,7 +13,7 @@ function SearchBar({employeeArray, setDisplayArray}) {
 
 	const handleInput = (employeeArray, filterString) => {
 		
-		const inputDelay = 1000;
+		const inputDelay = 350;
 		clearTimeout(searchtimer);
 
 		searchtimer = setTimeout(() => {
