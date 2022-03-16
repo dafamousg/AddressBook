@@ -39,7 +39,7 @@ class App extends Component {
 				<div className="App">
 					<Routes>
 						<Route
-							exact path="/"
+							path="*"
 							element={searchComponent}
 						/>
 						<Route

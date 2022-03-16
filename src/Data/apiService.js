@@ -1,17 +1,25 @@
 import data from './employeeData.json';
-import { v4 as uuidv4 } from 'uuid';
 
 const seedId = "seed=abc";
-const apiAddress = "https://randomuser.me/api/"
-const quantityQuery = (number) => `results=${number}`
+const apiAddress = "https://randomuser.me/api/";
+const quantityQuery = (number) => `results=${number}`;
 
-const apiData = async (employeesQuantity=15) => {
+
+/**
+ * Function to do API call and to modify result.
+ * 
+ * @param {Number} employeesQuantity 
+ * @returns {Array} - Return Array of employee objects. 
+ */
+const apiData = async (employeesQuantity=15) =>
+{
 	const dataResult = await fetch(`${apiAddress}?${seedId}&${quantityQuery(employeesQuantity)}`)
 		.then(res => res.json())
 		.then(data => {
-			data.results.forEach(employee => {
+			data.results.forEach((employee, i) => {
 				// Adds unique ID to all employees due to API ID not always included.
-				employee.id = uuidv4();
+				employee.id = i.toString();
+				employee['jobTitle'] = randomJobTitle();
 			});
 
 			return data.results.sort((a,b) => a.name.first > b.name.first);;
@@ -23,6 +31,25 @@ const apiData = async (employeesQuantity=15) => {
 		});
 
 	return dataResult
+}
+
+/**
+ * Function to return random job title.
+ * 
+ * @returns {String} - job title.
+ */
+const randomJobTitle = () => {
+	const jobTitleArray = [
+		'Software Engineer',
+		'UI/UX Designer',
+		'Software Architect',
+		'Graphic Designer',
+		'Product Manager',
+		'Office Manager',
+		'Program Manager'
+	];
+
+	return jobTitleArray[Math.floor(Math.random() * jobTitleArray.length)];
 }
 
 export default apiData;
