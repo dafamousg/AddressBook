@@ -1,3 +1,10 @@
 .searchTerm{
   width: 100%;
+  border: 3px solid #acacac75;
+  padding: 10px;
 }
+
+.searchTerm:focus{
+  color: #868282;
+}
+

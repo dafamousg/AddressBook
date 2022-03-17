@@ -86,7 +86,7 @@ function SearchEmployees({employeeArray}) {
 					setDisplayArray={setDisplayArray}
 				/>
 				<div className="dropdown" onClick={showSortList}>
-				<button className="dropbtn">SortBy: {showSort}</button>
+				<button className="dropbtn">Sort By: {showSort}</button>
 					<div id='sortContent' className="dropdown-content">
 						<span onClick={() => sortEmployees([...displayArray], "first")}>{sortDirection.firstname}</span>
 						<span onClick={() => sortEmployees([...displayArray], "last")}>{sortDirection.lastname}</span>
