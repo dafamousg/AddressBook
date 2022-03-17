@@ -37,7 +37,7 @@ const setUpEmployeeProfile = (employee) => {
 		<>
 			<div id='topProfile'>
 				<div id='profilePic'>
-					<img src={employee.picture.large} height='200px' width='200px'></img>
+					<img src={employee.picture.large} alt='' height='200px' width='200px'></img>
 				</div>
 				<div id='personalInfo'>
 					<div id='profileName'>
@@ -121,6 +121,9 @@ function getUTCTime(employee) {
 				const addedMinuts = minute - Number(offsetArray[3]);
 				minute = addedMinuts < 0 ? addedMinuts + 60 : addedMinuts
 			}
+		break;
+
+		default:
 		break;
 	}
 

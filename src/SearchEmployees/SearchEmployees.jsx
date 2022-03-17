@@ -118,7 +118,7 @@ window.onclick = function(event) {
 	{
     const sortContent = document.getElementById("sortContent");
 
-		if (sortContent.classList.contains('show')) {
+		if (sortContent?.classList.contains('show')) {
 			sortContent.classList.remove('show');
 		}
   }
