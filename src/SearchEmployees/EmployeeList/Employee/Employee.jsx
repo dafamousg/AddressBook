@@ -18,10 +18,10 @@ export default function Employee({employee, tableView}) {
 		employee.location.country : employee.nat;
 	
 		const emailColumn = tableView.showEmail ? 
-		(<td><span className='name'>{employee.email}</span></td>) : null;
+		(<td><div className='secondaryInfo'>{employee.email}</div></td>) : null;
 	
 	const numberColumn = tableView.showNumber ?
-		(<td><div>{employee.phone}</div></td>) : null;
+		(<td><div className='secondaryInfo'>{employee.phone}</div></td>) : null;
 
 	return (
 		<tr>
@@ -29,12 +29,12 @@ export default function Employee({employee, tableView}) {
 				<div id={employee.id} className="img"></div>
 			</td>
 			<td onClick={() => handleOnClick()}>
-				<span className='name'>{employee.name.first} {employee.name.last}</span>
+				<div id='listName'>{employee.name.first} {employee.name.last}</div>
 			</td>
 			{emailColumn}
 			{numberColumn}
 			<td>
-				<span className='name'>{country}</span>
+				<div className='secondaryInfo'>{country}</div>
 			</td>
 		</tr>
 	);

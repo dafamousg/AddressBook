@@ -1,5 +1,5 @@
-$maxPicHeight: 50px;
-$maxPicWidth: 50px;
+$maxPicHeight: 75px;
+$maxPicWidth: 75px;
 
 
 .img {
@@ -10,47 +10,10 @@ $maxPicWidth: 50px;
 	background-repeat: no-repeat;
 }
 
-
-
-/*
-
-a:link {
-	color: black;
-	text-decoration: none;
+.secondaryInfo {
+	color: #4a4a4a;
 }
 
-.employee {
-	position: relative;
-	border: 1px solid black;
-	display: flex;
-	background-color: rgb(243, 243, 243);
-	flex-wrap: wrap;
-	//overflow: auto;
-	width: 200px;
-	height: 100px;
+#listName {
+	font-size: 19px;
 }
-
-.imgContainer {
-	border: 1px solid pink;
-	border-radius: 50%;
-	left: 0;
-	top: 0;
-	overflow: auto;
-	position: absolute; 
-}
-
-.img {
-	height: $maxPicHeight;
-	width: $maxPicWidth;
-	background-size: cover;
-	background-repeat: no-repeat;
-}
-
-.infoContainer {
-	height: 74px;
-	font-size: medium;
-	overflow: hidden;
-	position: absolute;
-	bottom: 0;
-	width: 100%;
-} */
