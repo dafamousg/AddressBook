@@ -35,38 +35,25 @@ function SearchEmployees({employeeArray}) {
 		const ascending = sortingOrders[sortingType].ascendingOrder;
 
 		// Display chosen sort value
-		//console.log("setSortTo: ", sortingType);
 		const sortedArray = unsortedEmployeeArray.sort((a,b) => {
 			switch (sortingType) {
 				case 'country':
-					if (ascending)
-					{
-						console.log('ascending: ', ascending);
-						return a.location[sortingType] > b.location[sortingType];
-					}
-					else
-					{
-						console.log('ascending: ', ascending);
-						return a.location[sortingType] < b.location[sortingType];
-					}
+					return ascending ? 
+							a.location[sortingType].localeCompare(b.location[sortingType])
+						:
+							b.location[sortingType].localeCompare(a.location[sortingType]);
+
 				case 'first':
 				case 'last':
-					if (ascending)
-					{
-						console.log('ascending: ', ascending);
-						return a.name[sortingType] > b.name[sortingType]
-					}
-					else
-					{
-						console.log('ascending: ', ascending);
-						return a.name[sortingType] < b.name[sortingType]
-					}
+					return ascending ? 
+							a.name[sortingType].localeCompare(b.name[sortingType])
+						:
+							b.name[sortingType].localeCompare(a.name[sortingType]);
 			}
 		});
 
 		sortingOrders[sortingType].ascendingOrder = !sortingOrders[sortingType].ascendingOrder;
 
-		//console.log("sortedEmployeeArray: ", sortedArray);
 		setDisplayArray(sortedArray);
 
 		return sortedArray;

@@ -3,18 +3,24 @@ table {
 	border-collapse:separate; 
 	border-spacing: 0 0.5em;
 	text-align: left;
-/* 
-  td, th {
-	border: 1px solid #dddddd;
-  } */
+	border-collapse: separate;
+  border-spacing: 0 1.3em;
+
+
 	tbody tr {
 		background-color: #acacac2b;
 	}
 
-	thead tr {
+	thead {
+		top: 10px;
+		tr {
 		position: sticky;
 		top: 0;
 		background-color: white;
+		}
+	}
+	th {
+		font-weight: 100;
 	}
 }
 
@@ -25,12 +31,6 @@ tbody tr td:nth-child(-n + 2)
 
 tbody tr:hover
 {
-	background-color: #acacac75;
+  transform: translateY(-4px); 
+  box-shadow: -2px 5px #acacac75;
 }
-
-/* .EmployeeList {
-  display: flex;
-  justify-content: space-evenly;
-  align-content: flex-start;
-  flex-wrap: wrap;
-} */
