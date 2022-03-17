@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 export default function Employee({employee, tableView}) {
 	
 	const navigate = useNavigate();
-	const handleOnClick = useCallback(() => navigate(`/Employee/${employee.id}`), [navigate]);
+	const handleOnClick = useCallback((id) => navigate(`/Employee/${id}`), [navigate]);
 
 	useEffect(() => {
 		let imgUrl = employee.picture.large;
@@ -25,10 +25,10 @@ export default function Employee({employee, tableView}) {
 
 	return (
 		<tr>
-			<td onClick={() => handleOnClick()}>
+			<td onClick={() => handleOnClick(employee.id)}>
 				<div id={employee.id} className="img"></div>
 			</td>
-			<td onClick={() => handleOnClick()}>
+			<td onClick={() => handleOnClick(employee.id)}>
 				<div id='listName'>{employee.name.first} {employee.name.last}</div>
 			</td>
 			{emailColumn}

@@ -49,6 +49,8 @@ function SearchEmployees({employeeArray}) {
 							a.name[sortingType].localeCompare(b.name[sortingType])
 						:
 							b.name[sortingType].localeCompare(a.name[sortingType]);
+				default:
+					return a.location[sortingType].localeCompare(b.location[sortingType]);	
 			}
 		});
 
