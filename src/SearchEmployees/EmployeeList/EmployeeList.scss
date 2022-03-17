@@ -3,10 +3,7 @@ table {
 	border-collapse:separate; 
 	border-spacing: 0 0.5em;
 	text-align: left;
-/* 
-  td, th {
-	border: 1px solid #dddddd;
-  } */
+
 	tbody tr {
 		background-color: #acacac2b;
 	}
@@ -27,10 +24,3 @@ tbody tr:hover
 {
 	background-color: #acacac75;
 }
-
-/* .EmployeeList {
-  display: flex;
-  justify-content: space-evenly;
-  align-content: flex-start;
-  flex-wrap: wrap;
-} */

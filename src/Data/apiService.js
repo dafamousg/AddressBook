@@ -22,7 +22,7 @@ const apiData = async (employeesQuantity=15) =>
 				employee['jobTitle'] = randomJobTitle();
 			});
 
-			return data.results.sort((a,b) => a.name.first > b.name.first);;
+			return data.results.sort((a,b) => a.name.first.localeCompare(b.name.first));
 		})
 		.catch(e => {
 			// If error occurs, show list of employees from local JSON file.
