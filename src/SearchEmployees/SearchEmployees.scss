@@ -4,17 +4,60 @@
 	
 	.searchContainer {
 		margin: 100px auto;
-		
-		.sortingOptions {
-			background-color: pink;
-			display: flex;
-			width: 100%;
-			justify-content: space-evenly;
-
-			span:hover {
-				cursor: pointer;
-			}
-		}
 	}
 }
 
+.dropbtn {
+  background-color: #acacac2b;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content span {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: table-cell;
+}
+
+.dropdown-content span:hover {
+	background-color: #f1f1f1;
+	text-decoration: underline;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.show {
+	display: block;
+}
+
+.dropdown:hover {
+	.dropbtn {
+  	background-color: #acacac75;
+	}
+}
+
+
+@media only screen and (max-width: 765px) {
+	.dropdown-content span {
+		display: block;
+	}
+}
