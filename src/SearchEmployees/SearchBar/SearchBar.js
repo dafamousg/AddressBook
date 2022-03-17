@@ -42,12 +42,11 @@ function SearchBar({employeeArray, setDisplayArray}) {
 
 	return (
 		<div className="SearchBar">
-			<p>Search employee here</p>
 			<input 
 				type='text'
 				onChange={(e) => handleInput(employeeArray, e.target.value)}
 				className='searchTerm'
-				placeholder='Search for employee'
+				placeholder='Search for an employee'
 			/>
 		</div>
 	);
