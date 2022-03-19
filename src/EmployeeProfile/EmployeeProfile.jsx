@@ -1,12 +1,16 @@
-import './EmployeeProfile.scss';
-import { Link, useParams } from "react-router-dom";
+import { useCallback } from 'react';
+import { useNavigate, useParams } from "react-router-dom";
 import HomeWorkIcon from '@mui/icons-material/HomeWork';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import './EmployeeProfile.scss';
 
 function EmployeeProfile({employeeArray}) {
 	
 	const {employeeId} = useParams() || {};
+	const navigate = useNavigate();
+	const handleOnClick = useCallback(() => navigate(`/`), [navigate]);
 
 	const employee = employeeArray.find(employee => employee.id === employeeId) ?? null;
 
@@ -14,12 +18,12 @@ function EmployeeProfile({employeeArray}) {
 
 	return (
 	<>
-		<Link to="/">
-			<button id='btnback'>{"<-- EmployeeList"}</button>
-		</Link>
 		<div id='container'>
-			<div className="EmployeeProfile">
-				{employeeProfile}
+			<div id='btnContainer'>
+				<button id='btnback' onClick={() => handleOnClick()} type='button' data-hover='Back to employee menu'><ArrowBackIcon/></button>
+				<div className="EmployeeProfile">
+					{employeeProfile}
+				</div>
 			</div>
 		</div>
 	</>
@@ -41,33 +45,33 @@ const setUpEmployeeProfile = (employee) => {
 				</div>
 				<div id='personalInfo'>
 					<div id='profileName'>
-						<p id='name'>{employee.name.title}. {employee.name.first} {employee.name.last}</p>
-						<div><p id='jobTitle'>{employee.jobTitle}</p></div>
+						<p className='primaryText'>{employee.name.first} {employee.name.last}</p>
+						<div><p className='secondaryText'>{employee.jobTitle}</p></div>
 					</div>
 					<div id='contact'>
 						<div className='infoContainer'>
 							<div className='titles'>Email</div>
-							<p className='phone'>{employee.email}</p>
+							<p className='tertiary'>{employee.email}</p>
 						</div>
 						<div className='infoContainer'>
 							<span className='titles'>Work</span>
-							<p className='phone'>{employee.phone}</p>
+							<p className='tertiary'>{employee.phone}</p>
 						</div>
 						<div className='infoContainer'>
 							<span className='titles'>Private</span>
-							<p className='phone'>{employee.cell}</p>
+							<p className='tertiary'>{employee.cell}</p>
 						</div>
 					</div>
 				</div>
 			</div>
 			<div id='bottomProfile'>
 				<div className='infoContainer'>
-					<HomeWorkIcon/>
-					<div>{employee.location.city}, {employee.location.country}</div>
+					<HomeWorkIcon className='titles'/>
+					<div className='tertiary'>{employee.location.city}, {employee.location.country}</div>
 				</div>
 				<div className='infoContainer'>
-					<LocationOnIcon/>
-					<div>{employee.location.timezone.description}.</div>
+					<LocationOnIcon className='titles'/>
+					<div className='tertiary'>{employee.location.timezone.description}.</div>
 				</div>
 				{employeeLocalTime}
 			</div>
@@ -134,8 +138,8 @@ function getUTCTime(employee) {
 
 	return (
 		<div className='infoContainer'>
-			<AccessTimeIcon/>
-			<div>{convertedTime}</div>
+			<AccessTimeIcon className='titles'/>
+			<div className='tertiary'>{convertedTime}</div>
 		</div>
 	);
 
