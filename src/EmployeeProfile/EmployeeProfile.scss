@@ -1,23 +1,25 @@
 
 .EmployeeProfile {
   background-color: #e3e3e3;
-  width: 84%;
+  width: 100%;
   margin: auto;
   text-align: left;
   padding: 30px;
   border-radius: 18px;
-  max-height: 100vh;
+  max-height: 90vh;
+  overflow: auto;
+  overflow-wrap: break-word;
 }
 
 #container {
   height: 100vh;
   display: flex;
 }
-#name {
+.primaryText {
   font-weight: 700;
   font-size: 1.75em;
 }
-#jobTitle {
+.secondaryText {
   font-size: 1.3em;
 }
 .titles {
@@ -28,7 +30,7 @@
 #contact {
   margin-top: 12%;
 }
-.phone {
+.tertiary {
   font-size: 1.2em;
 }
 .infoContainer {
@@ -61,19 +63,60 @@
   }
   #personalInfo {
     display: inline-block;
-    vertical-align: top;
   }
 }
 
+#btnContainer {
+  background-color: #e3e3e3;
+  width: 84%;
+  margin: auto;
+  text-align: left;
+  padding: 30px;
+  border-radius: 18px;
+  max-height: 100vh;
+  position: relative;
+}
+
 #btnback {
+  width: 50px;
+  height: 50px;
+  color: #c80707;
+  border-radius: 50%;
+  border: none;
   position: absolute;
-  left: 0;
+  background-color: white;
+  top: 10px;
+  left: 10px;
+  box-shadow: -2px 5px #5c5c5c75;
+
+  &:active {
+    transform: translateY(4px);  
+    box-shadow: none;
+  }
 }
 
 
 @media only screen and (max-height: 765px) {
   .EmployeeProfile {
     padding-top: 14px;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .titles {
+    font-size: 0.6em;
+  }
+  .primaryText {
+    font-weight: 600;
+    font-size: 1.3em;
+  }
+  .secondaryText {
+    font-size: 1em;
+    color: rgb(80, 80, 80);
+    font-weight: 500;
+  }
+  .tertiary {
+    font-size: 0.8em;
   }
 }
 
