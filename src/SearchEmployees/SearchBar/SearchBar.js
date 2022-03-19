@@ -1,6 +1,7 @@
 import React from 'react';
 
 import './SearchBar.css';
+import SearchIcon from '@mui/icons-material/Search';
 
 
 function SearchBar({employeeArray, setDisplayArray}) {
@@ -42,12 +43,15 @@ function SearchBar({employeeArray, setDisplayArray}) {
 
 	return (
 		<div className="SearchBar">
-			<input 
-				type='text'
-				onChange={(e) => handleInput(employeeArray, e.target.value)}
-				className='searchTerm'
-				placeholder='Search for an employee'
-			/>
+			<div className='searchTerm'>
+				<SearchIcon id='searchIcon'/>
+				<input 
+					type='text'
+					onChange={(e) => handleInput(employeeArray, e.target.value)}
+					placeholder='Search for an employee'
+					id='searchInput'
+				/>
+			</div>
 		</div>
 	);
 }
