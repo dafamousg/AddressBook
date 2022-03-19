@@ -18,12 +18,12 @@
       "sizes": "512x512"
     },
     {
-      "src": "ascending.jpg",
+      "src": "ascending.svg",
       "type": "image/png",
       "sizes": "100x100"
     },
     {
-      "src": "descending.jpg",
+      "src": "descending.svg",
       "type": "image/png",
       "sizes": "100x100"
     }

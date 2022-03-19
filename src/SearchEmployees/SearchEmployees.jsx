@@ -63,7 +63,7 @@ function SearchEmployees({employeeArray}) {
 
 	const employeeList = displayArray.length > 0 && <EmployeeList employeeArray={displayArray}/>;
 
-	const orderDirection = sortingOrders[sortingOrders.currentType].ascendingOrder ? '/ascending.jpg' : '/descending.jpg';
+	const orderDirection = sortingOrders[sortingOrders.currentType].ascendingOrder ? '/ascending.svg' : '/descending.svg';
 	const orderDirectionString = sortingOrders[sortingOrders.currentType].ascendingOrder ? 'Ascending' : 'Descending';
 	const showSort = convertSortName(sortingOrders.currentType);
 
@@ -89,8 +89,8 @@ function SearchEmployees({employeeArray}) {
 							onClick={() => sortEmployees([...displayArray], sortingOrders.currentType)}
 							src={orderDirection}
 							alt={`${orderDirectionString} order`}
-							width='25px'
-							height='25px'
+							width='60px'
+							height='60px'
 						/>
 				</div>
 			</div>
