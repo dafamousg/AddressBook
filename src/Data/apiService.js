@@ -5,7 +5,6 @@ const apiAddress = "https://randomuser.me/api/";
 const quantityQuery = (number) => `results=${number}`;
 const exclude = 'exc=login,gender,dob,registered';
 
-
 /**
  * Function to do API call and to modify result.
  * 
@@ -27,12 +26,13 @@ const apiData = async (employeesQuantity=15) =>
 		})
 		.catch(e => {
 			// If error occurs, show list of employees from local JSON file.
-			console.log("Error message: ", e);
 			return data.results;
 		});
 
 	return dataResult
 }
+
+export default apiData;
 
 /**
  * Function to return random job title.
@@ -53,5 +53,3 @@ const randomJobTitle = () =>
 
 	return jobTitleArray[Math.floor(Math.random() * jobTitleArray.length)];
 }
-
-export default apiData;

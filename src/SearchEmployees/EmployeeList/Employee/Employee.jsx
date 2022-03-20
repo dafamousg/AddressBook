@@ -4,7 +4,6 @@ import { useNavigate } from "react-router-dom";
 
 export default function Employee({employee, tableView})
 {
-	
 	const navigate = useNavigate();
 	const handleOnClick = useCallback((id) => navigate(`/Employee/${id}`), [navigate]);
 
