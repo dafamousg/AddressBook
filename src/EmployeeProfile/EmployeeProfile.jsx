@@ -21,7 +21,9 @@ function EmployeeProfile({employeeArray})
 	<>
 		<div id='container'>
 			<div id='btnContainer'>
-				<button id='btnback' onClick={() => handleOnClick()} type='button' data-hover='Back to employee menu'><ArrowBackIcon/></button>
+				<button id='btnback' onClick={() => handleOnClick()} type='button' data-hover='Back to employee menu'>
+					<ArrowBackIcon/>
+				</button>
 				<div className="EmployeeProfile">
 					{employeeProfile}
 				</div>
@@ -31,7 +33,7 @@ function EmployeeProfile({employeeArray})
 	);
 }
 
-
+export default EmployeeProfile;
 
 const setUpEmployeeProfile = (employee) =>
 {
@@ -150,5 +152,3 @@ function getUTCTime(employee)
 		</div>
 	);
 }
-
-export default EmployeeProfile;

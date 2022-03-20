@@ -33,7 +33,8 @@
         "medium": "https://randomuser.me/api/portraits/med/women/85.jpg",
         "thumbnail": "https://randomuser.me/api/portraits/thumb/women/85.jpg"
       },
-      "nat": "CH"
+      "nat": "CH",
+      "jobTitle": "Software Engineer"
     },
     {
       "name": {
@@ -68,7 +69,8 @@
         "medium": "https://randomuser.me/api/portraits/med/women/91.jpg",
         "thumbnail": "https://randomuser.me/api/portraits/thumb/women/91.jpg"
       },
-      "nat": "ES"
+      "nat": "ES",
+      "jobTitle": "Software Engineer"
     },
     {
       "name": {
@@ -103,7 +105,8 @@
         "medium": "https://randomuser.me/api/portraits/med/men/16.jpg",
         "thumbnail": "https://randomuser.me/api/portraits/thumb/men/16.jpg"
       },
-      "nat": "IR"
+      "nat": "IR",
+      "jobTitle": "Software Engineer"
     },
     {
       "name": {
@@ -138,7 +141,8 @@
         "medium": "https://randomuser.me/api/portraits/med/men/38.jpg",
         "thumbnail": "https://randomuser.me/api/portraits/thumb/men/38.jpg"
       },
-      "nat": "CA"
+      "nat": "CA",
+      "jobTitle": "Software Engineer"
     },
     {
       "name": {
@@ -173,7 +177,8 @@
         "medium": "https://randomuser.me/api/portraits/med/women/41.jpg",
         "thumbnail": "https://randomuser.me/api/portraits/thumb/women/41.jpg"
       },
-      "nat": "ES"
+      "nat": "ES",
+      "jobTitle": "Software Engineer"
     }
   ]
 }

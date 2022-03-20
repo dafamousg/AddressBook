@@ -5,8 +5,10 @@ import SearchEmployees from './SearchEmployees/SearchEmployees';
 import EmployeeProfile from './EmployeeProfile/EmployeeProfile';
 import apiData from './Data/apiService';
 
-class App extends Component {
-	constructor(props) {
+class App extends Component
+{
+	constructor(props)
+	{
 		super(props);
 		
 		this.state = {
@@ -15,20 +17,21 @@ class App extends Component {
 	}
 
 	// Make API call to Random User API and send result to SearchEmployees()
-	componentDidMount() {
+	componentDidMount()
+	{
 		this.getData(15);
 	}
 
-	getData = async (value) => {
-		console.log("API Call");
+	getData = async (value) =>
+	{
 		await apiData(value)
 		.then((result) => {
-			console.log("API Answer: ", result);
 			this.setState({employeeArray: result})
 		});
 	};
 	
-	render() {
+	render()
+	{
 		const arrayExists = this.state.employeeArray.length > 0;
 
 		let searchComponent = arrayExists && <SearchEmployees employeeArray={this.state.employeeArray}/>;

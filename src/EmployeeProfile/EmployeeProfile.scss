@@ -1,6 +1,7 @@
+$mainColor: #e3e3e3;
 
 .EmployeeProfile {
-  background-color: #e3e3e3;
+  background-color: $mainColor;
   width: 100%;
   margin: auto;
   text-align: left;
@@ -37,7 +38,6 @@
   margin: 8px 0;
 }
 
-
 #bottomProfile {
   display: flex;
   justify-content: space-evenly;
@@ -67,7 +67,7 @@
 }
 
 #btnContainer {
-  background-color: #e3e3e3;
+  background-color: $mainColor;
   width: 84%;
   margin: auto;
   text-align: left;
@@ -95,31 +95,12 @@
   }
 }
 
-
+//Media queries
 @media only screen and (max-height: 765px) {
   .EmployeeProfile {
     padding-top: 14px;
   }
 }
-
-@media only screen and (max-width: 400px) {
-  .titles {
-    font-size: 0.6em;
-  }
-  .primaryText {
-    font-weight: 600;
-    font-size: 1.3em;
-  }
-  .secondaryText {
-    font-size: 1em;
-    color: rgb(80, 80, 80);
-    font-weight: 500;
-  }
-  .tertiary {
-    font-size: 0.8em;
-  }
-}
-
 
 @media only screen and (max-width: 600px) {
    
@@ -139,5 +120,23 @@
         height: 100%;
       }
     }
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .titles {
+    font-size: 0.6em;
+  }
+  .primaryText {
+    font-weight: 600;
+    font-size: 1.3em;
+  }
+  .secondaryText {
+    font-size: 1em;
+    color: rgb(80, 80, 80);
+    font-weight: 500;
+  }
+  .tertiary {
+    font-size: 0.8em;
   }
 }
