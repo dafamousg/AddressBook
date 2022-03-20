@@ -14,9 +14,9 @@ table {
 	thead {
 		top: 10px;
 		tr {
-		position: sticky;
-		top: 0;
-		background-color: white;
+			position: sticky;
+			top: 0;
+			background-color: white;
 		}
 	}
 	th {
@@ -33,4 +33,17 @@ tbody tr:hover
 {
   transform: translateY(-4px); 
   box-shadow: -2px 5px #7b7b7b75;
+}
+
+tbody tr:active
+{
+	transform: translateY(4px); 
+	box-shadow: none;
+}
+
+@media (hover: none) {
+	tbody tr
+	{ 
+		box-shadow: -2px 5px #7b7b7b75;
+	}
 }
