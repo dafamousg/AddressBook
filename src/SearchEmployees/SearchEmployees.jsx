@@ -2,7 +2,7 @@ import React from 'react';
 import './SearchEmployees.scss';
 import SearchBar from './SearchBar/SearchBar';
 import EmployeeList from './EmployeeList/EmployeeList';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 const sortingOrders = {
 	currentType: 'first',
@@ -17,14 +17,28 @@ const sortingOrders = {
 	}
 }
 
-function SearchEmployees({employeeArray}) {
-
+function SearchEmployees({employeeArray})
+{
 	const sortedArray = employeeArray;
-
 	const [displayArray, setDisplayArray] = useState(sortedArray);
-	
-	console.log("SearchEmployees re-render: ", employeeArray);
 
+	useEffect(() =>
+	{
+		const handleClick = (event) => {
+			if (!event.target.matches('.dropbtn'))
+			{
+				const sortContent = document.getElementById("sortContent");
+		
+				if (sortContent?.classList.contains('show')) {
+					sortContent.classList.remove('show');
+				}
+			}
+		};
+
+		document.addEventListener('click', handleClick);
+
+		return () => document.removeEventListener('click', handleClick);
+	});
 
 	/**
 	 * Function to sort an employeeArray of objects by object properties value
@@ -32,9 +46,16 @@ function SearchEmployees({employeeArray}) {
 	 * @param {Array} unsortedEmployeeArray 
 	 * @param {String} sortingType 
 	 */
-	function sortEmployees(unsortedEmployeeArray, sortingType) {
-		
+	function sortEmployees(unsortedEmployeeArray, sortingType)
+	{
 		sortingOrders[sortingType].ascendingOrder = !sortingOrders[sortingType].ascendingOrder;
+		
+		if (sortingType === sortingOrders.currentType)
+		{
+			setDisplayArray(unsortedEmployeeArray.reverse());
+			return;
+		}
+		
 		const ascending = sortingOrders[sortingType].ascendingOrder;
 		sortingOrders.currentType = sortingType;
 
@@ -76,22 +97,21 @@ function SearchEmployees({employeeArray}) {
 				/>
 				<div className="dropdown" onClick={showSortList}>
 					<div className="dropbtn">
-						Sort By: {showSort}
+						Sort By:&ensp;{showSort}
 					</div>
 					<div id='sortContent' className="dropdown-content">
 						<span onClick={() => sortEmployees([...displayArray], "first")}>Firstname</span>
 						<span onClick={() => sortEmployees([...displayArray], "last")}>Lastname</span>
 						<span onClick={() => sortEmployees([...displayArray], "country")}>Country</span>
 					</div>
-					
 					<img
-							id='sortImg'
-							onClick={() => sortEmployees([...displayArray], sortingOrders.currentType)}
-							src={orderDirection}
-							alt={`${orderDirectionString} order`}
-							width='60px'
-							height='60px'
-						/>
+						id='sortImg'
+						onClick={() => sortEmployees([...displayArray], sortingOrders.currentType)}
+						src={orderDirection}
+						alt={`${orderDirectionString} order`}
+						width='60px'
+						height='60px'
+					/>
 				</div>
 			</div>
 			{employeeList}
@@ -99,8 +119,17 @@ function SearchEmployees({employeeArray}) {
 	);
 }
 
-function convertSortName(sortType) {
+/**
+ * Fucntion that converts sort name to presentable name.
+ * ex: 'first' -> 'firstname'
+ * 
+ * @param {String} sortType 
+ * @returns {String} - Converted name
+ */
+function convertSortName(sortType)
+{
 	let convertedName = sortType;
+
 	if (sortType === 'first' || sortType === 'last')
 	{
 		convertedName += 'name';
@@ -109,19 +138,10 @@ function convertSortName(sortType) {
 	return convertedName;
 }
 
-function showSortList() {
+/** Toggles dropdown menu visability */
+function showSortList()
+{
 	document.getElementById('sortContent').classList.toggle('show');
 }
 
 export default SearchEmployees;
-
-window.onclick = function(event) {
-  if (!event.target.matches('.dropbtn'))
-	{
-    const sortContent = document.getElementById("sortContent");
-
-		if (sortContent?.classList.contains('show')) {
-			sortContent.classList.remove('show');
-		}
-  }
-}

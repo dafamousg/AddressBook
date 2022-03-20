@@ -1,24 +1,30 @@
+$mainColor: #e3e3e3;
+$shadowColor: #7b7b7b75;
+
+
 table {
 	width: 100%;
-	border-collapse:separate; 
+	border-collapse: separate; 
 	border-spacing: 0 0.5em;
 	text-align: left;
 	border-collapse: separate;
-  border-spacing: 0 1.3em;
+	border-spacing: 0 1.3em;
 
 
 	tbody tr {
-		background-color: #dbdbdb;
+		background-color: $mainColor;
 	}
 
 	thead {
 		top: 10px;
+
 		tr {
 			position: sticky;
 			top: 0;
 			background-color: white;
 		}
 	}
+
 	th {
 		font-weight: 100;
 	}
@@ -32,7 +38,7 @@ tbody tr td:nth-child(-n + 2)
 tbody tr:hover
 {
   transform: translateY(-4px); 
-  box-shadow: -2px 5px #7b7b7b75;
+  box-shadow: -2px 5px $shadowColor;
 }
 
 tbody tr:active
@@ -44,6 +50,6 @@ tbody tr:active
 @media (hover: none) {
 	tbody tr
 	{ 
-		box-shadow: -2px 5px #7b7b7b75;
+		box-shadow: -2px 5px $shadowColor;
 	}
 }

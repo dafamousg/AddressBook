@@ -1,11 +1,7 @@
-$maxPicHeight: 75px;
-$maxPicWidth: 75px;
-
-
 .img {
 	display: inline-block;
-	height: $maxPicHeight;
-	width: $maxPicWidth;
+	height: 75px;
+	width: 75px;
 	background-size: cover;
 	background-repeat: no-repeat;
 }

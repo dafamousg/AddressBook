@@ -4,16 +4,17 @@ import HomeWorkIcon from '@mui/icons-material/HomeWork';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import { Tooltip } from '@mui/material';
+
 import './EmployeeProfile.scss';
 
-function EmployeeProfile({employeeArray}) {
-	
+function EmployeeProfile({employeeArray})
+{
 	const {employeeId} = useParams() || {};
 	const navigate = useNavigate();
 	const handleOnClick = useCallback(() => navigate(`/`), [navigate]);
 
 	const employee = employeeArray.find(employee => employee.id === employeeId) ?? null;
-
 	const employeeProfile = employee ? setUpEmployeeProfile(employee) : null;
 
 	return (
@@ -32,10 +33,9 @@ function EmployeeProfile({employeeArray}) {
 
 
 
-const setUpEmployeeProfile = (employee) => {
-
+const setUpEmployeeProfile = (employee) =>
+{
 	const employeeLocalTime = getUTCTime(employee) ?? null;
-
 
 	return (
 		<>
@@ -66,11 +66,15 @@ const setUpEmployeeProfile = (employee) => {
 			</div>
 			<div id='bottomProfile'>
 				<div className='infoContainer'>
-					<HomeWorkIcon className='titles'/>
+					<Tooltip title='Home office' placement="top" arrow>
+						<HomeWorkIcon className='titles'/>
+					</Tooltip>
 					<div className='tertiary'>{employee.location.city}, {employee.location.country}</div>
 				</div>
 				<div className='infoContainer'>
-					<LocationOnIcon className='titles'/>
+					<Tooltip title='Current Location' placement="top" arrow>
+						<LocationOnIcon className='titles'/>
+					</Tooltip>
 					<div className='tertiary'>{employee.location.timezone.description}.</div>
 				</div>
 				{employeeLocalTime}
@@ -85,7 +89,8 @@ const setUpEmployeeProfile = (employee) => {
  * @param {Object} employee
  * @returns DOM structure for Local time or null
  */
-function getUTCTime(employee) {
+function getUTCTime(employee)
+{
 	// Converts string of UTC date to array with hours, minuts, seconds and a combination as items
 	const UTCDate = new Date().toISOString();
 	const regex = /(\d{2}):(\d{2}):(\d{2})/;
@@ -138,11 +143,12 @@ function getUTCTime(employee) {
 
 	return (
 		<div className='infoContainer'>
-			<AccessTimeIcon className='titles'/>
+			<Tooltip title='Local Time' placement="top" arrow>
+				<AccessTimeIcon className='titles'/>
+			</Tooltip>
 			<div className='tertiary'>{convertedTime}</div>
 		</div>
 	);
-
 }
 
 export default EmployeeProfile;
