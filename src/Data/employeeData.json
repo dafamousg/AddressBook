@@ -1,7 +1,6 @@
 {
   "results": [
     {
-      "gender": "female",
       "name": {
         "title": "Mademoiselle",
         "first": "Andreia",
@@ -26,16 +25,9 @@
         }
       },
       "email": "andreia.fournier@example.com",
-      "dob": {
-        "date": "1988-08-25T13:52:42.455Z",
-        "age": 34
-      },
       "phone": "079 066 82 30",
       "cell": "075 262 57 18",
-      "id": {
-        "name": "AVS",
-        "value": "756.3588.8199.76"
-      },
+      "id": 1,
       "picture": {
         "large": "https://randomuser.me/api/portraits/women/85.jpg",
         "medium": "https://randomuser.me/api/portraits/med/women/85.jpg",
@@ -44,7 +36,6 @@
       "nat": "CH"
     },
     {
-      "gender": "female",
       "name": {
         "title": "Miss",
         "first": "Carmen",
@@ -71,10 +62,7 @@
       "email": "carmen.ruiz@example.com",
       "phone": "911-060-458",
       "cell": "636-201-395",
-      "id": {
-        "name": "DNI",
-        "value": "17921093-N"
-      },
+      "id": 2,
       "picture": {
         "large": "https://randomuser.me/api/portraits/women/91.jpg",
         "medium": "https://randomuser.me/api/portraits/med/women/91.jpg",
@@ -83,7 +71,6 @@
       "nat": "ES"
     },
     {
-      "gender": "male",
       "name": {
         "title": "Mr",
         "first": "محمدعلی",
@@ -110,10 +97,7 @@
       "email": "mhmdaaly.ysmy@example.com",
       "phone": "060-00732522",
       "cell": "0996-564-0835",
-      "id": {
-        "name": "",
-        "value": null
-      },
+      "id": 3,
       "picture": {
         "large": "https://randomuser.me/api/portraits/men/16.jpg",
         "medium": "https://randomuser.me/api/portraits/med/men/16.jpg",
@@ -122,7 +106,6 @@
       "nat": "IR"
     },
     {
-      "gender": "male",
       "name": {
         "title": "Mr",
         "first": "Logan",
@@ -149,10 +132,7 @@
       "email": "logan.williams@example.com",
       "phone": "385-102-4615",
       "cell": "806-908-3703",
-      "id": {
-        "name": "",
-        "value": null
-      },
+      "id": 4,
       "picture": {
         "large": "https://randomuser.me/api/portraits/men/38.jpg",
         "medium": "https://randomuser.me/api/portraits/med/men/38.jpg",
@@ -161,7 +141,6 @@
       "nat": "CA"
     },
     {
-      "gender": "female",
       "name": {
         "title": "Miss",
         "first": "Clara",
@@ -188,10 +167,7 @@
       "email": "clara.gutierrez@example.com",
       "phone": "910-230-699",
       "cell": "666-200-387",
-      "id": {
-        "name": "DNI",
-        "value": "85019572-L"
-      },
+      "id": 5,
       "picture": {
         "large": "https://randomuser.me/api/portraits/women/41.jpg",
         "medium": "https://randomuser.me/api/portraits/med/women/41.jpg",
@@ -199,11 +175,5 @@
       },
       "nat": "ES"
     }
-  ],
-  "info": {
-    "seed": "7d642dc2a99ba1b6",
-    "results": 5,
-    "page": 1,
-    "version": "1.3"
-  }
+  ]
 }

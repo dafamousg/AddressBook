@@ -3,6 +3,7 @@ import data from './employeeData.json';
 const seedId = "seed=abc";
 const apiAddress = "https://randomuser.me/api/";
 const quantityQuery = (number) => `results=${number}`;
+const exclude = 'exc=login,gender,dob,registered';
 
 
 /**
@@ -13,7 +14,7 @@ const quantityQuery = (number) => `results=${number}`;
  */
 const apiData = async (employeesQuantity=15) =>
 {
-	const dataResult = await fetch(`${apiAddress}?${seedId}&${quantityQuery(employeesQuantity)}`)
+	const dataResult = await fetch(`${apiAddress}?${seedId}&${quantityQuery(employeesQuantity)}&${exclude}`)
 		.then(res => res.json())
 		.then(data => {
 			data.results.forEach((employee, i) => {
@@ -38,7 +39,8 @@ const apiData = async (employeesQuantity=15) =>
  * 
  * @returns {String} - job title.
  */
-const randomJobTitle = () => {
+const randomJobTitle = () =>
+{
 	const jobTitleArray = [
 		'Software Engineer',
 		'UI/UX Designer',

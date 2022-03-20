@@ -3,21 +3,16 @@ import Employee from './Employee/Employee';
 import './EmployeeList.scss';
 
 
-function EmployeeList({employeeArray}) {
-
-	console.log('re-render: ');
-
+function EmployeeList({employeeArray})
+{
 	const [tableView, setTableView] = useState({});
-
 	
 	// To render correct fields on first render.
-	useEffect(() => {
-		handleResize();
-	}, []);
+	useEffect(() => handleResize(), []);
 	
 	// UseEffect to call function on window resize with Debounce function delay
-	useEffect(() => {
-		
+	useEffect(() =>
+	{
 		let searchtimer;
 		window.addEventListener('resize', debounce);
 		
@@ -39,7 +34,8 @@ function EmployeeList({employeeArray}) {
 	 * 
 	 * sets local state "tableView"
 	 */
-	const handleResize = () => {
+	const handleResize = () =>
+	{
 		const temp = {
 			showEmail: true,
 			showNumber: true,
@@ -60,7 +56,8 @@ function EmployeeList({employeeArray}) {
 		setTableView(temp);
 	}
 	
-	const employeesList = employeeArray.map((employee, i) => {
+	const employeesList = employeeArray.map((employee, i) =>
+	{
 		return (
 			<Employee
 				key={i}
